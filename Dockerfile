@@ -1,9 +1,6 @@
 # Use the official Tailscale image
 FROM tailscale/tailscale:latest
 
-# Add the Alpine-compatible Caddy web server
-COPY --from=caddy:2-alpine /usr/bin/caddy /usr/bin/caddy
-
 # Copy our startup script into the container
 COPY start.sh .
 RUN chmod +x ./start.sh
